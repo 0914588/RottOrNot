@@ -1,9 +1,79 @@
+@font-face {
+	font-family:Ubuntu;
+	font-weight:normal;
+	src:url("fonts/Ubuntu/Ubuntu-R.ttf");
+}
+@font-face {
+	font-family:Ubuntu;
+	font-weight:bold;
+	src:url("fonts/Ubuntu/Ubuntu-B.ttf");
+}
+
 html, body, #googleMap {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+
+   	font-family:calibri;
 }
-#googleMaps {
+#googleMap {
     position: relative;
+    background:url("/img/even_geduld.png") no-repeat center #FAFAFA;
+}
+
+div#head {
+	text-align:center;
+	width:100%;
+	height:60px;
+	position:absolute;
+	z-index:99;
+	background:#424242;
+	box-shadow:0 0 7px rgba(0,0,0,0.7);
+	-moz-box-shadow:0 0 7px rgba(0,0,0,0.7);
+	-webkit-box-shadow:0 0 7px rgba(0,0,0,0.7);
+}
+div#head img {
+	margin-top:5px;
+}
+
+.marker {
+	font-family:Ubuntu;
+}
+.marker .name {
+	font-weight:bold;
+	font-size:15px;
+}
+.marker .address {
+	padding:0px;
+	margin:0px;
+}
+.marker .more {
+	cursor:pointer;
+	float:right;
+	font-family:Ubuntu;
+	font-weight:bold;
+	font-size:14px;
+	color:#008300;
+
+	margin-top:10px;	
+}
+.marker .more:hover {
+	color:#007700;
+}
+
+#specifications {
+	width:500px;
+	background:#FAFAFA;
+	position:absolute;
+	float:right;
+
+	top:60px;
+	right:0;
+
+	display:none;
+
+	box-shadow:0 0 7px rgba(0,0,0,0.7);
+	-moz-box-shadow:0 0 7px rgba(0,0,0,0.7);
+	-webkit-box-shadow:0 0 7px rgba(0,0,0,0.7);
 }

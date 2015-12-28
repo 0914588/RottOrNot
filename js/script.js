@@ -90,6 +90,9 @@ function setMarkers(obj){
 // Show the extra information after clicking on "Meer >>" in the marker popup
 //
 function showMore(name){
+  // Always remove the previous opened window
+  $("#specifications").remove();
+
   var html = "<div id='specifications'><h1>"+name+"</h1></div>"
   $("body").append(html);
   var height = $("body").height() - $("#head").height();

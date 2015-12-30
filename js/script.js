@@ -48,17 +48,17 @@ function setMarkers(obj){
   });
 
   var markers = Array();
-
   for(i = 0; i < obj.length; i++){
     data = obj[i];
-
+    imageMarker = getMarkerImage(data.cijfer);
     var pos = new google.maps.LatLng(data.latitude, data.longitude);
     var marker = new google.maps.Marker({
       position:pos,
-      icon:'/img/Marker.png',
+      icon:'/img/'+imageMarker,
       map:map,
       title:data.naam
     });
+    console.log(data);
     // Push markers to array for future use
     markers.push(marker);
     // Add click listener to the marker, push content for popup
@@ -67,9 +67,9 @@ function setMarkers(obj){
         infoWindow.setContent("<div class='marker'>"+
             "<div class='left'><img src='../img/logo-50.png'></div>"+
             "<div class='right'>"+
-            "<label class='name'>"+csvdata[i].naam+"</label>"+
-            "<p class='address'>"+csvdata[i].categorie+"</p>"+
-            "<div class='more' onclick='showMore(\""+csvdata[i].naam+"\")'>Meer >></div>"+
+            "<label class='name'>"+data.naam+"</label>"+
+            "<p class='address'>"+data.categorie+"</p>"+
+            "<div class='more' onclick='showMore(\""+data.naam+"\")'>Meer >></div>"+
             "</div>"+
           "</div>");
         infoWindow.open(map, marker);
@@ -101,4 +101,57 @@ function showMore(name){
   var height = $("body").height() - $("#head").height();
   $("#specifications").css({"height":height});
   $("#specifications").animate({width:'toggle'},350);
+}
+
+//
+// Bepaal doormiddel van het cijfer de afbeelding van de marker
+//
+function getMarkerImage(getal) {
+  count = 0;
+  file = '';
+  while (count < 10) {
+
+    voor = count;
+    count = count + 0.5;
+    na = count;
+
+    var num=na;
+    var str=num.toString();
+    var numarray=str.split('.');
+    var a=new Array();
+    a=numarray;
+
+    if (a[1] != 5) {
+      a[1] = 0;
+    }
+
+    color =0;
+    if (getal <= 2.4 && getal > 0) {
+      color = 1
+    }
+    else if (getal <= 4.4 && getal > 2.4) {
+      color = 2
+    }
+    else if (getal <= 6.4 && getal > 4.4) {
+      color = 3
+    }
+    else if (getal <= 8.4 && getal > 6.4) {
+      color = 4
+    }
+    else if (getal <= 10 && getal > 8.4) {
+      color = 5
+    }
+
+    if (color == 0) {
+      file = 'marker_default.jpeg';
+    } else {
+      if (getal <= na && getal > voor) {
+        file = 'marker_color' + color + '_' + a[0] + '_' + a[1] + '.jpeg';
+      }
+    }
+
+    file = 'Marker.png';
+
+  }
+  return file;
 }

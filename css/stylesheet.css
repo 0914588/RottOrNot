@@ -78,6 +78,10 @@ div#head img {
 	-webkit-box-shadow:0 0 7px rgba(0,0,0,0.7);
 }
 
+#specifications h1 {
+	margin: 20px;
+}
+
 .marker .left img {
 	width: 100px;
 }

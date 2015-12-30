@@ -44,7 +44,7 @@ function readCSV(){
 //
 function setMarkers(obj){
   var infoWindow = new google.maps.InfoWindow({
-    maxWidth: 200
+    maxWidth: 310
   });
 
   var markers = Array();
@@ -65,9 +65,12 @@ function setMarkers(obj){
     google.maps.event.addListener(marker, 'click', (function(marker, i){
       return function(){
         infoWindow.setContent("<div class='marker'>"+
+            "<div class='left'><img src='../img/logo-50.png'></div>"+
+            "<div class='right'>"+
             "<label class='name'>"+csvdata[i].naam+"</label>"+
             "<p class='address'>"+csvdata[i].categorie+"</p>"+
             "<div class='more' onclick='showMore(\""+csvdata[i].naam+"\")'>Meer >></div>"+
+            "</div>"+
           "</div>");
         infoWindow.open(map, marker);
       }

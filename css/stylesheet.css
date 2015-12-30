@@ -77,3 +77,19 @@ div#head img {
 	-moz-box-shadow:0 0 7px rgba(0,0,0,0.7);
 	-webkit-box-shadow:0 0 7px rgba(0,0,0,0.7);
 }
+
+.marker .left img {
+	height: 100px;
+	border:2px solid black;
+}
+
+.marker .left {
+	float: left;
+	margin-right:10px;
+	width: 100px;
+}
+
+.marker .right {
+	float: left;
+	width:200px;
+}

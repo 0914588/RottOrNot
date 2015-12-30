@@ -29,12 +29,12 @@ function readCSV(){
     url: "data/Yelp.csv",
     async: false,
     success: function (csv) {
-        csvdata = $.csv.toObjects(csv,{"separator":"|"});
+      csvdata = $.csv.toObjects(csv,{"separator":"|"});
     },
     dataType: "text",
     complete: function () {
-        // Call a function on complete
-        setMarkers(csvdata);
+      // Call a function on complete
+      setMarkers(csvdata);
     }
   });
 }
@@ -65,13 +65,13 @@ function setMarkers(obj){
     google.maps.event.addListener(marker, 'click', (function(marker, i){
       return function(){
         infoWindow.setContent("<div class='marker'>"+
-            "<div class='left'><img src='../img/logo-50.png'></div>"+
+            "<div class='left'><img src='"+obj[i].images+"'></div>"+
             "<div class='right'>"+
-            "<label class='name'>"+data.naam+"</label>"+
-            "<p class='address'>"+data.categorie+"</p>"+
-            "<div class='more' onclick='showMore(\""+data.naam+"\")'>Meer >></div>"+
+            "<label class='name'>"+obj[i].naam+"</label>"+
+            "<p class='address'>"+obj[i].categorie+"</p>"+
+            "<div class='more' onclick='showMore(\""+obj[i].naam+"\")'>Meer >></div>"+
             "</div>"+
-          "</div>");
+            "</div>");
         infoWindow.open(map, marker);
       }
     })(marker, i));

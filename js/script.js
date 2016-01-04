@@ -54,7 +54,7 @@ function setMarkers(obj){
     var pos = new google.maps.LatLng(data.latitude, data.longitude);
     var marker = new google.maps.Marker({
       position:pos,
-      icon:'/img/'+imageMarker,
+      icon:'/img/Marker/'+imageMarker,
       map:map,
       title:data.naam
     });
@@ -143,14 +143,13 @@ function getMarkerImage(getal) {
     }
 
     if (color == 0) {
-      file = 'marker_default.jpeg';
+      file = 'marker_default.png';
     } else {
       if (getal <= na && getal > voor) {
-        file = 'marker_color' + color + '_' + a[0] + '_' + a[1] + '.jpeg';
+        file = 'marker_color' + color + '_' + a[0] + '_' + a[1] + '.png';
       }
     }
 
-    file = 'Marker.png';
 
   }
   return file;

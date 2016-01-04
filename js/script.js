@@ -49,16 +49,14 @@ function setMarkers(obj){
 
   var markers = Array();
   for(i = 0; i < obj.length; i++){
-    data = obj[i];
-    imageMarker = getMarkerImage(data.cijfer);
-    var pos = new google.maps.LatLng(data.latitude, data.longitude);
+    imageMarker = getMarkerImage(obj[i].cijfer);
+    var pos = new google.maps.LatLng(obj[i].latitude, obj[i].longitude);
     var marker = new google.maps.Marker({
       position:pos,
       icon:'/img/'+imageMarker,
       map:map,
-      title:data.naam
+      title:obj[i].naam
     });
-    console.log(data);
     // Push markers to array for future use
     markers.push(marker);
     // Add click listener to the marker, push content for popup

@@ -126,6 +126,7 @@ function getMarkerImage(getal) {
     }
 
     color =0;
+    // Bepaal de kleur
     if (getal <= 2.4 && getal > 0) {
       color = 1
     }
@@ -143,13 +144,16 @@ function getMarkerImage(getal) {
     }
 
     if (color == 0) {
-      file = 'marker_default.jpeg';
+      // Deafult marker
+      file = 'marker_default.png';
     } else {
       if (getal <= na && getal > voor) {
-        file = 'marker_color' + color + '_' + a[0] + '_' + a[1] + '.jpeg';
+        // marker_color1_1_0.png, haal de marker op.
+        file = 'marker_color' + color + '_' + a[0] + '_' + a[1] + '.png';
       }
     }
 
+    // Verwijderen als alle markers aanwezig zijn.
     file = 'Marker.png';
 
   }

@@ -27,9 +27,9 @@ import oauth2
 
 
 API_HOST = 'api.yelp.com'
-DEFAULT_TERM = 'dinner'
-DEFAULT_LOCATION = 'San Francisco, CA'
-SEARCH_LIMIT = 3
+DEFAULT_TERM = 'food'
+DEFAULT_LOCATION = 'Rotterdam, NL'
+SEARCH_LIMIT = 20
 SEARCH_PATH = '/v2/search/'
 BUSINESS_PATH = '/v2/business/'
 
@@ -138,7 +138,8 @@ def query_api(term, location):
     print u'{0} businesses found, querying business info ' \
         'for the top result "{1}" ...'.format(
             len(businesses), business_id)
-    response = get_business(business_id)
+    "response = get_business(business_id)"
+    response = businesses
 
     print u'Result for business "{0}" found:'.format(business_id)
     pprint.pprint(response, indent=2)

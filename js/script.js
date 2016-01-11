@@ -174,6 +174,7 @@ function concatData(data){
     for(d = 0; d < data[k].length; d++){
       var exists = false;
       var eIndex = 0;
+      // Loopen door de al geconcateneerde gegevens om te checken of het restaurant al bestaat, op basis van adres. Als die bestaat de index opslaan voor later gebruik.
       for(f = 0;f < concatted.length; f++){
         if(concatted[f].adres == data[k][d].adres){
           exists = true;
@@ -181,33 +182,38 @@ function concatData(data){
           break;
         }
       }
-
       if(exists){
+        // Als restaurant bestaat, gegevens in de concatted array vullen als die nog niet gevuld zijn.
+        concatted[f].naam = (concatted[f].naam == "" ? data[k][d].naam : concatted[f].naam);
+        concatted[f].adres = (concatted[f].adres == "" ? data[k][d].adres : concatted[f].adres);
         concatted[f].categorie = (concatted[f].categorie == "" ? data[k][d].categorie : concatted[f].categorie);
-        
         if(data[k][d].cijfer.trim() != "" && data[k][d].cijfer.trim().length > 0){
-          concatted[f].cijfer = concatted[f].cijfer+parseFloat(data[k][d].cijfer);
+          concatted[f].cijfer = parseFloat(concatted[f].cijfer)+parseFloat(data[k][d].cijfer.replace(",","."));
           counter[f] = counter[f]+1;
         }
-        
+        concatted[f].latitude = (concatted[f].latitude == 0 ? data[k][d].latitude : concatted[f].latitude);
+        concatted[f].longitude = (concatted[f].longitude == 0 ? data[k][d].longitude : concatted[f].longitude);
         concatted[f].images = (concatted[f].images == "" ? data[k][d].images : concatted[f].images);
       } else {
+        // Als restaurant nog niet bestaat, gegevens standaard vullen met wat fout afhandeling voor als de gegevens niet in de csv stonden.
         concatted[d] = {
-          naam: data[k][d].naam,
-          adres: data[k][d].adres,
+          naam: (data[k][d].naam != undefined ? data[k][d].naam : ''),
+          adres: (data[k][d].adres != undefined ? data[k][d].adres : ''),
           categorie: (data[k][d].categorie ? data[k][d].categorie : ''),
-          cijfer: parseFloat(data[k][d].cijfer),
-          latitude: data[k][d].latitude,
-          longitude: data[k][d].longitude,
+          cijfer: (parseFloat(data[k][d].cijfer.replace(",",".")) != undefined ? parseFloat(data[k][d].cijfer.replace(",",".")) : 0),
+          latitude: (data[k][d].latitude != undefined ? data[k][d].latitude : 0),
+          longitude: (data[k][d].longitude != undefined ? data[k][d].longitude : 0),
           images: (data[k][d].images ? data[k][d].images : '')
         };
         counter[f] = 1;
       }
 
+      // Als we bij de laatste csv array zijn
       if(i == Object.size(data)){
+        // Als de counter groter is dan 1; wat betekend dat het cijfer minimaal 1 keer is opgehoogd met een cijfer uit een ander csv bestand.
         if(counter[f] && counter[f] > 1){
-          console.log(parseFloat(concatted[d].cijfer));
-          concatted[d].cijfer = concatted[d].cijfer/counter[f];
+          // Als cijfer is opgehoogd, cijfer delen door het aantal keer dat het is opgehoogd, hierdoor krijgen we het gemiddelde
+          concatted[d].cijfer = parseFloat(concatted[d].cijfer)/counter[f];
         }
       }
     }
@@ -216,6 +222,9 @@ function concatData(data){
   return concatted;
 }
 
+//
+// Lengte van een key-based array terug krijgen.
+//
 Object.size = function(obj) {
     var size = 0, key;
     for (key in obj) {

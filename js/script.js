@@ -25,18 +25,25 @@ function initialize() {
 // Read the CSV file(s) and place it in an multidemensional array
 //
 function readCSV(){
+  var yelpData = [];
+  var iensData = [];
   $.ajax({
     url: "data/Yelp.csv",
     async: false,
     success: function (csv) {
-      csvdata = $.csv.toObjects(csv,{"separator":"|"});
+      yelpData = $.csv.toObjects(csv,{"separator":"|"});
     },
-    dataType: "text",
-    complete: function () {
-      // Call a function on complete
-      setMarkers(csvdata);
-    }
+    dataType: "text"
   });
+  $.ajax({
+    url: "data/Iens.csv",
+    async: false,
+    success: function (csv) {
+      iensData = $.csv.toObjects(csv,{"separator":"|"});
+    },
+    dataType: "text"
+  });
+  setMarkers(concatData({yelpData,iensData}));
 }
 
 //
@@ -49,6 +56,8 @@ function setMarkers(obj){
 
   var markers = Array();
   for(i = 0; i < obj.length; i++){
+    console.log(obj[i].latitude);
+    console.log(obj[i].longitude);
     imageMarker = getMarkerImage(obj[i].cijfer);
     var pos = new google.maps.LatLng(obj[i].latitude, obj[i].longitude);
     var marker = new google.maps.Marker({
@@ -144,7 +153,7 @@ function getMarkerImage(getal) {
     if (color == 0) {
 
       // Deafult marker
-      file = 'marker_default.png';
+      file = 'default.png';
     } else {
       if (getal <= na && getal > voor) {
         // marker_color1_1_0.png, haal de marker op.
@@ -155,3 +164,54 @@ function getMarkerImage(getal) {
   }
   return file;
 }
+
+//
+// Verkrijg één tabel met geconcateneerde gegevens van meerdere bronnen.
+//
+function concatData(data){
+  var concatted = new Array();
+  var i = 1;
+  for(k in data){
+    for(d = 0; d < data[k].length; d++){
+      var exists = false;
+      var eIndex = 0
+      for(f = 0;f < concatted.length; f++){
+        if(concatted[f].adres == data[k][d].adres){
+          exists = true;
+          eIndex = f;
+          break;
+        }
+      }
+
+      if(exists){
+        concatted[f].categorie = (concatted[f].categorie == "" ? data[k][d].categorie : concatted[f].categorie);
+        concatted[f].cijfer = concatted[f].cijfer+parseInt(data[k][d].cijfer);
+        concatted[f].images = (concatted[f].images == "" ? data[k][d].images : concatted[f].images);
+      } else {
+        concatted[d] = {
+          naam: data[k][d].naam,
+          adres: data[k][d].adres,
+          categorie: (data[k][d].categorie ? data[k][d].categorie : ''),
+          cijfer: parseInt(data[k][d].cijfer),
+          latitude: data[k][d].latitude,
+          longitude: data[k][d].longitude,
+          images: (data[k][d].images ? data[k][d].images : '')
+        };
+      }
+
+      if(i == Object.size(data)){
+        concatted[d].cijfer = concatted[d].cijfer/i;
+      }
+    }
+    i++;  
+  }
+  return concatted;
+}
+
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};

@@ -1,21 +1,21 @@
-naam,cijfer,latitude,longitude
-"Rosso; 9,2; Van+Vollenhovenstraat+15+Rotterdam++;51909987;44773364"
-"Parkheuvel;9,2;Heuvellaan+21+Rotterdam++;519039115;4471554"
-"Fred;9,1;Honingerdijk+263-265+Rotterdam++;519170874;4517495"
-"Bij Loes Delfshaven;9,1;Voorhaven+35+Rotterdam++;519075638;44479945"
-"HMB Restaurant;8,9;Holland+Amerika+kade+104+Rotterdam++;519244201;44777325"
-"FG Restaurant;8,9;Lloydstraat+204+Rotterdam++;519021101;44608628"
-"Zeezout;8,9;Westerkade+11b+Rotterdam++;519062591;44775371"
-"Sugo;8,9;Aert+van+Nesstraat+20+Rotterdam++;519208501;44778232"
-"La Vita e Bella;8,9;Oostzeedijk+Beneden+229+Rotterdam++;519231119;44997296"
-"Allure;8,8;Cargadoorskade+107+Rotterdam++;519096698;44995797"
-"De Harmonie;8,8;Westersingel+95+Rotterdam++;519138334;44747966"
-"In Den Rustwat;8,8;Honingerdijk+96+Rotterdam++;519182724;45185042"
-"Restaurant Fitzgerald;8,8;Gelderseplein+49+Rotterdam++;519195429;44904579"
-"La Zia Maria;8,8;Nieuwe+Binnenweg+222a+Rotterdam++;519133163;44615515"
-"FG Food Labs;8,7;Katshoek+41+Rotterdam++;519262472;44794878"
-"Het Restaurant Wereldmuseum;8,7;Willemskade+25+Rotterdam++;519079997;44806119"
-"Guliano;8,7;Meent+31a+Rotterdam++;519236299;44851422"
-"t Ouwe Bruggetje;8,7;Voorhaven+6+Rotterdam++;519082095;4448817"
-"De Hemel op Aarde;8,7;Oostzeedijk+Beneden+205a+Rotterdam++;519229051;45009112"
-"VINEUM;8,7;Eendrachtsweg+23+Rotterdam++;519156579;44747741"
+naam|cijfer|adres|latitude|longitude
+Rosso| 9,2| Van+Vollenhovenstraat+15+Rotterdam++|51909987|44773364
+Parkheuvel|9,2|Heuvellaan+21+Rotterdam++|519039115|4471554
+Fred|9,1|Honingerdijk+263-265+Rotterdam++|519170874|4517495
+Bij Loes Delfshaven|9,1|Voorhaven+35+Rotterdam++|519075638|44479945
+HMB Restaurant|8,9|Holland+Amerika+kade+104+Rotterdam++|519244201|44777325
+FG Restaurant|8,9|Lloydstraat+204+Rotterdam++|519021101|44608628
+Zeezout|8,9|Westerkade+11b+Rotterdam++|519062591|44775371
+Sugo|8,9|Aert+van+Nesstraat+20+Rotterdam++|519208501|44778232
+La Vita e Bella|8,9|Oostzeedijk+Beneden+229+Rotterdam++|519231119|44997296
+Allure|8,8|Cargadoorskade+107+Rotterdam++|519096698|44995797
+De Harmonie|8,8|Westersingel+95+Rotterdam++|519138334|44747966
+In Den Rustwat|8,8|Honingerdijk+96+Rotterdam++|519182724|45185042
+Restaurant Fitzgerald|8,8|Gelderseplein+49+Rotterdam++|519195429|44904579
+La Zia Maria|8,8|Nieuwe+Binnenweg+222a+Rotterdam++|519133163|44615515
+FG Food Labs|8,7|Katshoek+41+Rotterdam++|519262472|44794878
+Het Restaurant Wereldmuseum|8,7|Willemskade+25+Rotterdam++|519079997|44806119
+Guliano|8,7|Meent+31a+Rotterdam++|519236299|44851422
+t Ouwe Bruggetje|8,7|Voorhaven+6+Rotterdam++|519082095|4448817
+De Hemel op Aarde|8,7|Oostzeedijk+Beneden+205a+Rotterdam++|519229051|45009112
+VINEUM|8,7|Eendrachtsweg+23+Rotterdam++|519156579|44747741

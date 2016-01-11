@@ -56,8 +56,6 @@ function setMarkers(obj){
 
   var markers = Array();
   for(i = 0; i < obj.length; i++){
-    console.log(obj[i].latitude);
-    console.log(obj[i].longitude);
     imageMarker = getMarkerImage(obj[i].cijfer);
     var pos = new google.maps.LatLng(obj[i].latitude, obj[i].longitude);
     var marker = new google.maps.Marker({
@@ -170,11 +168,12 @@ function getMarkerImage(getal) {
 //
 function concatData(data){
   var concatted = new Array();
+  var counter = new Array();
   var i = 1;
   for(k in data){
     for(d = 0; d < data[k].length; d++){
       var exists = false;
-      var eIndex = 0
+      var eIndex = 0;
       for(f = 0;f < concatted.length; f++){
         if(concatted[f].adres == data[k][d].adres){
           exists = true;
@@ -185,22 +184,31 @@ function concatData(data){
 
       if(exists){
         concatted[f].categorie = (concatted[f].categorie == "" ? data[k][d].categorie : concatted[f].categorie);
-        concatted[f].cijfer = concatted[f].cijfer+parseInt(data[k][d].cijfer);
+        
+        if(data[k][d].cijfer.trim() != "" && data[k][d].cijfer.trim().length > 0){
+          concatted[f].cijfer = concatted[f].cijfer+parseFloat(data[k][d].cijfer);
+          counter[f] = counter[f]+1;
+        }
+        
         concatted[f].images = (concatted[f].images == "" ? data[k][d].images : concatted[f].images);
       } else {
         concatted[d] = {
           naam: data[k][d].naam,
           adres: data[k][d].adres,
           categorie: (data[k][d].categorie ? data[k][d].categorie : ''),
-          cijfer: parseInt(data[k][d].cijfer),
+          cijfer: parseFloat(data[k][d].cijfer),
           latitude: data[k][d].latitude,
           longitude: data[k][d].longitude,
           images: (data[k][d].images ? data[k][d].images : '')
         };
+        counter[f] = 1;
       }
 
       if(i == Object.size(data)){
-        concatted[d].cijfer = concatted[d].cijfer/i;
+        if(counter[f] && counter[f] > 1){
+          console.log(parseFloat(concatted[d].cijfer));
+          concatted[d].cijfer = concatted[d].cijfer/counter[f];
+        }
       }
     }
     i++;  

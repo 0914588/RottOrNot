@@ -12,8 +12,10 @@ content = url.read()
 soup = BeautifulSoup(content, "html.parser")
 
 with open('../data/Iens.csv', 'wb') as csvfile:
-    schrijf = csv.writer(csvfile, delimiter=' ',
-                            quotechar=' ', quoting=csv.QUOTE_MINIMAL)
+    schrijf = csv.writer(csvfile, delimiter='|',
+                            quotechar=' ')
+
+    schrijf.writerow(["naam","cijfer","adres","latitude","longitude"])
 
     for link in soup.select('article[class=listerItem]'):
         # get the name
@@ -35,4 +37,4 @@ with open('../data/Iens.csv', 'wb') as csvfile:
             j = json.loads(addr)
             lat = j['results'][0]['geometry']['location']['lat']
             lng = j['results'][0]['geometry']['location']['lng']
-            schrijf.writerow(name +'|'+ cijfer +'|' + addressText + '|' + str(lat) + '|' + str(lng))
+            schrijf.writerow([name, cijfer, addressText, str(lat), str(lng)])

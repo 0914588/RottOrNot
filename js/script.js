@@ -101,7 +101,10 @@ function showMore(name){
   // Always remove the previous opened window
   $("#specifications").remove();
 
-  var html = "<div id='specifications'><h1>"+name+"</h1></div>"
+  var html = "<div id='specifications'>"
+  html += "<h1>"+name+"</h1>"
+  html += "<div class='adres'><h2>Adresgegevens</h2></div>"
+  html += "</div>"
   $("body").append(html);
   var height = $("body").height() - $("#head").height();
   $("#specifications").css({"height":height});
@@ -185,7 +188,7 @@ function concatData(data){
       if(exists){
         // Als restaurant bestaat, gegevens in de concatted array vullen als die nog niet gevuld zijn.
         concatted[f].naam = (concatted[f].naam == "" ? data[k][d].naam : concatted[f].naam);
-        concatted[f].adres = (concatted[f].adres == "" ? data[k][d].adres : concatted[f].adres);
+        concatted[f].adres = (concatted[f].adres == "" ? data[k][d].adres.replace("+",' ') : concatted[f].adres.replace("+",' '));
         concatted[f].categorie = (concatted[f].categorie == "" ? data[k][d].categorie : concatted[f].categorie);
         if(data[k][d].cijfer.trim() != "" && data[k][d].cijfer.trim().length > 0){
           concatted[f].cijfer = parseFloat(concatted[f].cijfer)+parseFloat(data[k][d].cijfer.replace(",","."));
@@ -198,7 +201,7 @@ function concatData(data){
         // Als restaurant nog niet bestaat, gegevens standaard vullen met wat fout afhandeling voor als de gegevens niet in de csv stonden.
         concatted[d] = {
           naam: (data[k][d].naam != undefined ? data[k][d].naam : ''),
-          adres: (data[k][d].adres != undefined ? data[k][d].adres : ''),
+          adres: (data[k][d].adres != undefined ? data[k][d].adres.replace("+",' ') : ''),
           categorie: (data[k][d].categorie ? data[k][d].categorie : ''),
           cijfer: (parseFloat(data[k][d].cijfer.replace(",",".")) != undefined ? parseFloat(data[k][d].cijfer.replace(",",".")) : 0),
           latitude: (data[k][d].latitude != undefined ? data[k][d].latitude : 0),

@@ -1,21 +1,20 @@
-naam|cijfer|adres|latitude|longitude
-Rosso| 9,2| Van+Vollenhovenstraat+15+Rotterdam++|51909987|4.4773364
-Parkheuvel|9,2|Heuvellaan+21+Rotterdam++|51.9039115|4.471554
-Fred|9,1|Honingerdijk+263-265+Rotterdam++|51.9170874|4.517495
-Bij Loes Delfshaven|9,1|Voorhaven+35+Rotterdam++|51.9075638|4.4479945
-HMB Restaurant|8,9|Holland+Amerika+kade+104+Rotterdam++|51.9244201|4.4777325
-FG Restaurant|8,9|Lloydstraat+204+Rotterdam++|51.9021101|4.4608628
-Zeezout|8,9|Westerkade+11b+Rotterdam++|51.9062591|4.4775371
-Sugo|8,9|Aert+van+Nesstraat+20+Rotterdam++|51.9208501|4.4778232
-La Vita e Bella|8,9|Oostzeedijk+Beneden+229+Rotterdam++|51.9231119|4.4997296
-Allure|8,8|Cargadoorskade+107+Rotterdam++|51.9096698|4.4995797
-De Harmonie|8,8|Westersingel+95+Rotterdam++|51.9138334|4.4747966
-In Den Rustwat|8,8|Honingerdijk+96+Rotterdam++|51.9182724|4.5185042
-Restaurant Fitzgerald|8,8|Gelderseplein+49+Rotterdam++|51.9195429|4.4904579
-La Zia Maria|8,8|Nieuwe+Binnenweg+222a+Rotterdam++|51.9133163|4.4615515
-FG Food Labs|8,7|Katshoek+41+Rotterdam++|51.9262472|4.4794878
-Het Restaurant Wereldmuseum|8,7|Willemskade+25+Rotterdam++|51.9079997|4.4806119
-Guliano|8,7|Meent+31a+Rotterdam++|51.9236299|4.4851422
-t Ouwe Bruggetje|8,7|Voorhaven+6+Rotterdam++|51.9082095|4.448817
-De Hemel op Aarde|8,7|Oostzeedijk+Beneden+205a+Rotterdam++|51.9229051|4.5009112
-VINEUM|8,7|Eendrachtsweg+23+Rotterdam++|51.9156579|4.4747741
+R o s s o | 9 . 2 | V a n + V o l l e n h o v e n s t r a a t + 1 5 + R o t t e r d a m + + | 5 1 . 9 0 9 9 8 7 | 4 . 4 7 7 3 3 6 4
+P a r k h e u v e l | 9 . 2 | H e u v e l l a a n + 2 1 + R o t t e r d a m + + | 5 1 . 9 0 3 9 1 1 5 | 4 . 4 7 1 5 5 4
+F r e d | 9 . 1 | H o n i n g e r d i j k + 2 6 3 - 2 6 5 + R o t t e r d a m + + | 5 1 . 9 1 7 0 8 7 4 | 4 . 5 1 7 4 9 5
+B i j      L o e s      D e l f s h a v e n | 9 . 0 | V o o r h a v e n + 3 5 + R o t t e r d a m + + | 5 1 . 9 0 7 5 6 3 8 | 4 . 4 4 7 9 9 4 5
+F G      R e s t a u r a n t | 8 . 9 | L l o y d s t r a a t + 2 0 4 + R o t t e r d a m + + | 5 1 . 9 0 2 1 1 0 1 | 4 . 4 6 0 8 6 2 8
+Z e e z o u t | 8 . 9 | W e s t e r k a d e + 1 1 b + R o t t e r d a m + + | 5 1 . 9 0 6 2 5 9 1 | 4 . 4 7 7 5 3 7 1
+S u g o | 8 . 9 | A e r t + v a n + N e s s t r a a t + 2 0 + R o t t e r d a m + + | 5 1 . 9 2 0 8 5 0 1 | 4 . 4 7 7 8 2 3 2
+R e s t a u r a n t      F i t z g e r a l d | 8 . 9 | G e l d e r s e p l e i n + 4 9 + R o t t e r d a m + + | 5 1 . 9 1 9 5 4 2 9 | 4 . 4 9 0 4 5 7 9
+L a      V i t a      e      B e l l a | 8 . 9 | O o s t z e e d i j k + B e n e d e n + 2 2 9 + R o t t e r d a m + + | 5 1 . 9 2 3 1 1 1 9 | 4 . 4 9 9 7 2 9 6
+H M B      R e s t a u r a n t | 8 . 8 | H o l l a n d + A m e r i k a + k a d e + 1 0 4 + R o t t e r d a m + + | 5 1 . 9 2 4 4 2 0 1 | 4 . 4 7 7 7 3 2 5
+A l l u r e | 8 . 8 | C a r g a d o o r s k a d e + 1 0 7 + R o t t e r d a m + + | 5 1 . 9 0 9 6 6 9 8 | 4 . 4 9 9 5 7 9 7
+D e      H a r m o n i e | 8 . 8 | W e s t e r s i n g e l + 9 5 + R o t t e r d a m + + | 5 1 . 9 1 3 8 3 3 4 | 4 . 4 7 4 7 9 6 6
+I n      D e n      R u s t w a t | 8 . 8 | H o n i n g e r d i j k + 9 6 + R o t t e r d a m + + | 5 1 . 9 1 8 2 7 2 4 | 4 . 5 1 8 5 0 4 2
+' t      O u w e      B r u g g e t j e | 8 . 8 | V o o r h a v e n + 6 + R o t t e r d a m + + | 5 1 . 9 0 8 2 0 9 5 | 4 . 4 4 8 8 1 7
+L a      Z i a      M a r i a | 8 . 8 | N i e u w e + B i n n e n w e g + 2 2 2 a + R o t t e r d a m + + | 5 1 . 9 1 3 3 1 6 3 | 4 . 4 6 1 5 5 1 5
+U m a m i      b y      H a n ,      R o t t e r d a m | 8 . 7 | B i n n e n r o t t e + 1 4 0 + R o t t e r d a m + + | 5 1 . 9 2 2 6 0 3 8 | 4 . 4 8 6 1 1 7 8
+F G      F o o d      L a b s | 8 . 7 | K a t s h o e k + 4 1 + R o t t e r d a m + + | 5 1 . 9 2 6 2 4 7 2 | 4 . 4 7 9 4 8 7 8
+G u l i a n o | 8 . 7 | M e e n t + 3 1 a + R o t t e r d a m + + | 5 1 . 9 2 3 6 2 9 9 | 4 . 4 8 5 1 4 2 2
+V I N E U M | 8 . 7 | E e n d r a c h t s w e g + 2 3 + R o t t e r d a m + + | 5 1 . 9 1 5 6 5 7 9 | 4 . 4 7 4 7 7 4 1
+Z e n n e | 8 . 6 | W i l l e m s k a d e + 2 7 + R o t t e r d a m + + | 5 1 . 9 0 7 6 9 8 6 | 4 . 4 8 0 2 2 0 5

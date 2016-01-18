@@ -74,7 +74,7 @@ function setMarkers(obj){
             "<div class='right'>"+
             "<label class='name'>"+obj[i].naam+"</label>"+
             "<p class='address'>"+obj[i].categorie+"</p>"+
-            "<div class='more' onclick='showMore(\""+obj[i].naam+"\")'>Meer >></div>"+
+            "<div class='more' onclick='showMore(\""+obj[i].naam.replace("\'", "&#39;")+"\")'>Meer >></div>"+
             "</div>"+
             "</div>");
         infoWindow.open(map, marker);

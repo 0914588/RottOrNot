@@ -27,6 +27,7 @@ import oauth2
 import csv
 
 
+
 API_HOST = 'api.yelp.com'
 DEFAULT_TERM = 'food'
 DEFAULT_LOCATION = 'Rotterdam, NL'
@@ -144,12 +145,7 @@ def query_api(term, location):
         print len(response)
         i = 0
         while i < len(response):
-            print response[i]['name']
-            print response[i]['rating']
-            print response[i]['location']['address'][0]
-            print str(response[i]['location']['coordinate']['latitude'])
-            print str(response[i]['location']['coordinate']['longitude'])
-            schrijf.writerow([response[i]['name'], response[i]['rating'], response[i]['location']['address'][0], str(response[i]['location']['coordinate']['latitude']), str(response[i]['location']['coordinate']['longitude'])])
+            schrijf.writerow([response[i]['name'].strip(), response[i]['rating'], response[i]['location']['address'][0].strip(), str(response[i]['location']['coordinate']['latitude']), str(response[i]['location']['coordinate']['longitude'])])
             i+=1
 
 

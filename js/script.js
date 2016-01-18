@@ -102,12 +102,21 @@ function showMore(name){
   $("#specifications").remove();
 
   var html = "<div id='specifications'>"
+  // Full image
+  html += "<div class='images-full'><img src='http://www.nandos.com/sites/all/themes/nandos/images/restaurants/restaurant-carousel-1.jpg'></div>"
+
+  // Information about restaurant
+  html += "<div class='information'>"
   html += "<h1>"+name+"</h1>"
   html += "<div class='Beschrijving'>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e</div>"
+
+  // Adres gegevens
   html += "<div class='adres'><h2>Adresgegevens</h2>"
   html += "<div class='street'>Wijnhaven 101</div>"
   html += "<div class='city'>3303BL Rotterdam</div>"
   html += "</div>"
+
+  // Openings tijden
   html += "<div class='tijden'><h2>Openingstijden</h2>"
   html += "<table>"
   html += "<tr><td>Maandag</td><td>:</td><td>10:00 - 12:00</td></tr>"
@@ -118,7 +127,32 @@ function showMore(name){
   html += "<tr><td>Zaterdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
   html += "<tr><td>Zondag</td><td>:</td><td>Gesloten</td></tr>"
   html += "</table></div>"
+
+  // Reviews
   html += "<div class='recenties'><h2>Recenties</h2></div>"
+  html += "<div class='review'>"
+  html += "<h3>Leuk eten</h3>"
+  html += "<div class='text'>Super lekker eten man</div>"
+  html += "</div>"
+  html += "<div class='review'>"
+  html += "<h3>Water</h3>"
+  html += "<div class='text'>Het water was erg lekker van smaak</div>"
+  html += "</div>"
+
+  // Social media
+  html += "<div class='socialmedia'>"
+  html += "<div class='twitter'><h3>Twitter</h3>"
+  html += "<div class='info'>test123</div>"
+  html += "<div class='info'>test123</div>"
+  html += "<div class='info'>test123</div>"
+  html += "</div>"
+  html += "<div class='facebook'><h3>Facebook</h3>"
+  html += "<div class='info'>test123</div>"
+  html += "<div class='info'>test123</div>"
+  html += "<div class='info'>test123</div>"
+  html += "</div>"
+  html += "</div>"
+  html += "</div>"
   html += "</div>"
   $("body").append(html);
   var height = $("body").height() - $("#head").height();

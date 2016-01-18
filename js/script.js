@@ -103,7 +103,22 @@ function showMore(name){
 
   var html = "<div id='specifications'>"
   html += "<h1>"+name+"</h1>"
-  html += "<div class='adres'><h2>Adresgegevens</h2></div>"
+  html += "<div class='Beschrijving'>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e</div>"
+  html += "<div class='adres'><h2>Adresgegevens</h2>"
+  html += "<div class='street'>Wijnhaven 101</div>"
+  html += "<div class='city'>3303BL Rotterdam</div>"
+  html += "</div>"
+  html += "<div class='tijden'><h2>Openingstijden</h2>"
+  html += "<table>"
+  html += "<tr><td>Maandag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Dinsdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Woensdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Donderdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Vrijdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Zaterdag</td><td>:</td><td>10:00 - 12:00</td></tr>"
+  html += "<tr><td>Zondag</td><td>:</td><td>Gesloten</td></tr>"
+  html += "</table></div>"
+  html += "<div class='recenties'><h2>Recenties</h2></div>"
   html += "</div>"
   $("body").append(html);
   var height = $("body").height() - $("#head").height();

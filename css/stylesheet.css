@@ -67,7 +67,7 @@ div#head img {
 	background:#FAFAFA;
 	position:absolute;
 	float:right;
-
+	padding: 20px;
 	top:60px;
 	right:0;
 
@@ -76,10 +76,6 @@ div#head img {
 	box-shadow:0 0 7px rgba(0,0,0,0.7);
 	-moz-box-shadow:0 0 7px rgba(0,0,0,0.7);
 	-webkit-box-shadow:0 0 7px rgba(0,0,0,0.7);
-}
-
-#specifications h1 {
-	margin: 20px;
 }
 
 .marker .left img {
@@ -95,4 +91,13 @@ div#head img {
 .marker .right {
 	float: left;
 	width:200px;
+}
+
+.adres {
+	float:left;
+	width:50%;
+}
+.tijden {
+	float:left;
+	width:50%;
 }

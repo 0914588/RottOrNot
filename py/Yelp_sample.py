@@ -24,12 +24,12 @@ import urllib
 import urllib2
 
 import oauth2
+import csv
 
 
 API_HOST = 'api.yelp.com'
 DEFAULT_TERM = 'food'
 DEFAULT_LOCATION = 'Rotterdam, NL'
-SEARCH_LIMIT = 20
 SEARCH_PATH = '/v2/search/'
 BUSINESS_PATH = '/v2/business/'
 
@@ -98,8 +98,7 @@ def search(term, location):
 
     url_params = {
         'term': term.replace(' ', '+'),
-        'location': location.replace(' ', '+'),
-        'limit': SEARCH_LIMIT
+        'location': location.replace(' ', '+')
     }
     return request(API_HOST, SEARCH_PATH, url_params=url_params)
 
@@ -133,16 +132,25 @@ def query_api(term, location):
         print u'No businesses for {0} in {1} found.'.format(term, location)
         return
 
-    business_id = businesses[0]['id']
-
-    print u'{0} businesses found, querying business info ' \
-        'for the top result "{1}" ...'.format(
-            len(businesses), business_id)
-    "response = get_business(business_id)"
     response = businesses
 
-    print u'Result for business "{0}" found:'.format(business_id)
     pprint.pprint(response, indent=2)
+
+    with open('../data/Yelp.csv', 'wb') as csvfile:
+        schrijf = csv.writer(csvfile, delimiter='|',
+                            quotechar=' ')
+
+        schrijf.writerow(["naam","cijfer","adres","latitude","longitude"])
+        print len(response)
+        i = 0
+        while i < len(response):
+            print response[i]['name']
+            print response[i]['rating']
+            print response[i]['location']['address'][0]
+            print str(response[i]['location']['coordinate']['latitude'])
+            print str(response[i]['location']['coordinate']['longitude'])
+            schrijf.writerow([response[i]['name'], response[i]['rating'], response[i]['location']['address'][0], str(response[i]['location']['coordinate']['latitude']), str(response[i]['location']['coordinate']['longitude'])])
+            i+=1
 
 
 def main():

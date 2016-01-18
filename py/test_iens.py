@@ -11,7 +11,7 @@ content = url.read()
 
 soup = BeautifulSoup(content, "html.parser")
 
-with open('C:\Users\kevin\Documents\GitHub\RottOrNot\data\Iens.csv', 'w') as csvfile:
+with open('../data/Iens.csv', 'wb') as csvfile:
     schrijf = csv.writer(csvfile, delimiter=' ',
                             quotechar=' ', quoting=csv.QUOTE_MINIMAL)
 
